@@ -1,0 +1,160 @@
+
+
+/* Set padding to keep content from hitting the edges */
+body {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, #4a494f 0%, #1b1b22 100%);
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #d7d7d7;
+}
+
+.container{
+    position: relative;
+    width: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Search bar */
+.topnav {
+    text-align: center;
+}
+
+.search {
+    border-radius: 100px;
+    width: 100%;
+    font-size: large;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+}
+
+.results {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.results td, .results th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.results tr:nth-child(even){background-color: #f2f2f2;
+                            color: black;}
+.results tr:nth-child(odd){color: white;}
+
+.results tr:nth-child(even):hover {background-color: rgb(212, 212, 212);}
+.results tr:nth-child(odd):hover {background-color: rgb(39, 38, 43);}
+
+.results th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #b8b8b8;
+    color: black;
+}
+
+
+table.sortable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table.sortable tbody td, table.sortable thead th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.sortable tbody tr:nth-child(even){background-color: #f2f2f2;
+                            color: black;}
+table.sortable tbody tr:nth-child(odd){color: white;}
+
+table.sortable tbody tr:nth-child(even):hover {background-color: rgb(212, 212, 212);}
+table.sortable tbody tr:nth-child(odd):hover {background-color: rgb(39, 38, 43);}
+
+table.sortable thead th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #b8b8b8;
+    color: black;
+}
+
+
+.output {
+	text-align: center;
+}
+
+.row {
+    display: inline;
+}
+
+/* Filter Buttons */
+.colButton {
+	text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.selButton {
+    font-size: x-large;
+	text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+    border-radius: 100px;
+    background-color: #eeeeee;
+}
+
+.selButton:hover {
+    background-color: #d1d1d1;
+}
+
+/*Set width on the form input elements since they're 100% wide by default*/
+input,
+select,
+
+textarea {
+    max-width: 280px;
+}
+
+/*styles for validation helpers*/
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
