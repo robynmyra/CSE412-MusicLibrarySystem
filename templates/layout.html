@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Library System</title>
+	<link rel="stylesheet" href="/static/css/site.css" />
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+</head>
+
+<body>
+    <div class="container body-content">
+        <!--- Search bar -->
+        <div class="topnav">
+            {% if searchString %}
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+
+                    {{ form.searchString.label }}
+                    {{ form.searchString(class="search") }}
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="colButton">
+                            {{ form.artistsButton(class="selButton") }}
+                            {{ form.songsButton(class="selButton") }}
+                            {{ form.albumsButton(class="selButton") }}
+                        </div>
+                    </div>
+
+                <!-- Selection buttons
+                <div class="row">
+                    <div class="colButton">
+                        <button class="selButton">Artists</button>
+                    </div>
+                    <div class="colButton">
+                        <button class="selButton">Songs</button>
+                    </div>
+                    <div class="colButton">
+                        <button class="selButton">Albums</button>
+                    </div>
+                    <div class="colButton">
+                        <button class="selButton">Genres</button>
+                    </div>
+                </div> -->
+
+                {% if artists %}
+                    <h1>Artists</h1>
+                    <table class="sortable">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Followers</th>
+                            <th>Popularity</th>
+                            <th>Main Genre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for artist in artists %}
+                        <tr>
+                            <td>{{ artist[1] }}</td>
+                            <td>{{ artist[2] }}</td>
+                            <td>{{ artist[3] }}</td>
+                            <td>{{ artist[5] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                {% elif songs %}
+                    <h1>Songs</h1>
+                    <table class="sortable">
+                        <thead>
+                        <tr>
+                            <th>Song</th>
+                            <th>Artist</th>
+                            <th>Album</th>
+                            <th>Song Type</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                    {% for song in songs %}
+                        <tr>
+                            <td>{{ song[0] }}</td>
+                            <td>{{ song[2] }}</td>
+                            <td>{{ song[1] }}</td>
+                            <td>{{ song[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                {% elif albums %}
+                    <h1>Albums</h1>
+                    <table class="sortable">
+                        <thead>
+                        <tr>
+                            <th>Album</th>
+                            <th>Artist</th>
+                            <th>Total Tracks</th>
+                            <th>Main Genre</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                    {% for album in albums %}
+                        <tr>
+                            <td>{{ album[1] }}</td>
+                            <td>{{ album[2] }}</td>
+                            <td>{{ album[3] }}</td>
+                            <td>{{ album[4] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                {% endif %}
+
+            {% else %}
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+
+                    {{ form.searchString.label }}
+                    {{ form.searchString(class="search") }}
+                    <br/>
+                <br/>
+
+                <!-- Selection buttons -->
+                <div class="row">
+                    <div class="colButton">
+                        {{ form.artistsButton(class="selButton") }}
+                        {{ form.songsButton(class="selButton") }}
+                        {{ form.albumsButton(class="selButton") }}
+                    </div>
+                </div>
+
+            {% endif %}
+        </div>
+
+
+        <footer>
+            <p>&copy; 2022 - CSE 412 Group 14</p>
+        </footer>
+    </div>
+</body>
+</html>
